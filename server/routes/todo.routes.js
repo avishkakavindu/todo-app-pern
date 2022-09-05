@@ -7,6 +7,8 @@ module.exports = (params) => {
     try {
       const { description } = req.body;
 
+      console.log(description);
+
       const newTodo = await pool.query(
         'INSERT INTO todo (description) VALUES($1) RETURNING *',
         [description]
